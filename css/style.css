@@ -1,0 +1,82 @@
+/* Boas práticas e reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Cabeçalho e Rodapé Consistentes  */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: #0779e4 3px solid;
+}
+
+header h1 {
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header ul {
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background: #333;
+    color: #fff;
+}
+
+main {
+    padding: 20px 0;
+}
+
+/* Design Responsivo  */
+@media (max-width: 768px) {
+    header h1,
+    header nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header ul {
+        margin-top: 10px;
+    }
+
+    header li {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+}
