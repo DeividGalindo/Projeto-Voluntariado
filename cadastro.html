@@ -21,9 +21,61 @@
     </header>
 
     <main class="container">
-        <h2>Bem-vindo à Plataforma de Conexão Voluntária!</h2>
-        <p>Esta plataforma foi criada para aproximar ONGs de voluntários. Nosso objetivo é otimizar o processo de captação de voluntários, tornando-o mais eficiente e transparente.</p>
-    </main>
+    <h2>Cadastro de Necessidade </h2>
+    <p>Preencha o formulário abaixo para cadastrar uma nova necessidade de voluntariado ou doação.</p>
+    
+    <form id="form-necessidade">
+        <div class="form-group">
+            <label for="nomeInstituicao">Nome da Instituição *</label>
+            <input type="text" id="nomeInstituicao" required>
+        </div>
+        <div class="form-group">
+            <label for="tipoAjuda">Tipo de Ajuda * </label>
+            <select id="tipoAjuda" required>
+                <option value="">Selecione o tipo</option>
+                <option value="Educação">Educação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Meio Ambiente">Meio Ambiente</option>
+                <option value="Doação de Alimentos">Doação de Alimentos</option>
+                <option value="Doação de Roupas">Doação de Roupas</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="titulo">Título da Necessidade * </label>
+            <input type="text" id="titulo" required>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição Detalhada * </label>
+            <textarea id="descricao" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP * </label>
+            <input type="text" id="cep" required>
+        </div>
+        <div class="form-group">
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" readonly>
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" readonly>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" readonly>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" readonly>
+        </div>
+        <div class="form-group">
+            <label for="contato">Contato (E-mail ou Telefone) * </label>
+            <input type="text" id="contato" required>
+        </div>
+        <button type="submit" class="btn">Cadastrar Necessidade</button>
+    </form>
+</main>
 
     <footer>
         <div class="container">
