@@ -87,3 +87,41 @@ function cadastrarNecessidade() {
     alert('Necessidade cadastrada com sucesso!');
     document.getElementById('form-necessidade').reset(); // Limpa o formulário
 }
+
+// Parte da visualização de necessidades (só executa se o container de cards existir)
+document.addEventListener('DOMContentLoaded', () => {
+    const cardsContainer = document.getElementById('cards-container');
+    if (cardsContainer) {
+        carregarNecessidades();
+    }
+    // ... (restante do código do DOMContentLoaded)
+});
+
+/**
+ * Carrega as necessidades do localStorage e as exibe na tela.
+ */
+function carregarNecessidades() {
+    const necessidades = JSON.parse(localStorage.getItem('necessidades')) || [];
+    const cardsContainer = document.getElementById('cards-container');
+    
+    cardsContainer.innerHTML = ''; // Limpa a área antes de adicionar os cards
+
+    if (necessidades.length === 0) {
+        cardsContainer.innerHTML = '<p>Nenhuma necessidade cadastrada no momento.</p>';
+        return;
+    }
+
+    necessidades.forEach(necessidade => {
+        // Apresentar cada necessidade em um "card" ou bloco visualmente distinto 
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h3>${necessidade.titulo}</h3>
+            <p><strong>Instituição:</strong> ${necessidade.nomeInstituicao}</p>
+            <p><span class="tipo-ajuda">${necessidade.tipoAjuda}</span></p>
+            <p><strong>Descrição:</strong> ${necessidade.descricao}</p>
+            <p><strong>Local:</strong> ${necessidade.cidade} - ${necessidade.estado}</p>
+        `;
+        cardsContainer.appendChild(card);
+    });
+}
