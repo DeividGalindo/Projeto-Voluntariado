@@ -153,3 +153,20 @@ main {
     font-size: 0.8em;
     font-weight: bold;
 }
+
+/* Estilos dos Filtros */
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros input[type="search"],
+.filtros select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 200px;
+}
