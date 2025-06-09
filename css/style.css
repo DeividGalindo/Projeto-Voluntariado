@@ -118,3 +118,38 @@ main {
 .btn:hover {
     background: #055aab;
 }
+
+/* Estilos dos Cards de Visualização */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0779e4;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.card .tipo-ajuda {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
