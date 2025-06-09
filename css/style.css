@@ -19,7 +19,7 @@ body {
     padding: 0 20px;
 }
 
-/* Cabeçalho e Rodapé Consistentes  */
+/* Cabeçalho, rodapé e navegação para consistência visual  */
 header {
     background: #333;
     color: #fff;
@@ -61,26 +61,6 @@ main {
     padding: 20px 0;
 }
 
-/* Design Responsivo  */
-@media (max-width: 768px) {
-    header h1,
-    header nav {
-        float: none;
-        text-align: center;
-        width: 100%;
-    }
-
-    header ul {
-        margin-top: 10px;
-    }
-
-    header li {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
-    }
-}
-
 /* Estilos do Formulário */
 .form-group {
     margin-bottom: 15px;
@@ -119,7 +99,43 @@ main {
     background: #055aab;
 }
 
-/* Estilos dos Cards de Visualização */
+/* Estilos para o layout em grade do formulário */
+.form-grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-grid-container .form-group {
+    margin-bottom: 0;
+}
+
+.grid-col-1 { grid-column: span 1; }
+.grid-col-2 { grid-column: span 2; }
+.grid-col-3 { grid-column: span 3; }
+.grid-col-4 { grid-column: span 4; }
+.grid-col-5 { grid-column: span 5; }
+.grid-col-6 { grid-column: span 6; }
+
+/* Estilos dos Filtros */
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros input[type="search"],
+.filtros select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Layout Amigável: Apresentar cada necessidade em um "card"  */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -154,19 +170,35 @@ main {
     font-weight: bold;
 }
 
-/* Estilos dos Filtros */
-.filtros {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
+/* Design Responsivo  */
+@media (max-width: 768px) {
+    header h1,
+    header nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
 
-.filtros input[type="search"],
-.filtros select {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    flex: 1;
-    min-width: 200px;
+    header ul {
+        margin-top: 10px;
+    }
+
+    header li {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .form-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-col-1,
+    .grid-col-2,
+    .grid-col-3,
+    .grid-col-4,
+    .grid-col-5,
+    .grid-col-6 {
+        grid-column: span 1;
+    }
 }
