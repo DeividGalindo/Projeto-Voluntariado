@@ -1,14 +1,14 @@
 // Aguarda o DOM ser completamente carregado para executar o script
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Parte do formulário de cadastro (só executa se o formulário existir na página)
+    // Parte do formulário de cadastro
     const form = document.getElementById('form-necessidade');
     if (form) {
         const cepInput = document.getElementById('cep');
         
         // Adiciona um evento que é acionado quando o campo CEP perde o foco
         cepInput.addEventListener('blur', () => {
-            const cep = cepInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            const cep = cepInput.value.replace(/\D/g, '');
             if (cep.length === 8) {
                 consultarCEP(cep);
             }
@@ -16,16 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Adiciona um evento para a submissão do formulário
         form.addEventListener('submit', (event) => {
-            event.preventDefault(); // Impede o recarregamento da página
+            event.preventDefault();
             cadastrarNecessidade();
         });
     }
 });
 
-/**
- * Função para consultar o CEP na API ViaCEP.
- * Adicionar comentários explicativos em trechos complexos do código.
- */
+
+ // Função para consultar o CEP na API ViaCEP
 function consultarCEP(cep) {
     const url = `https://viacep.com.br/ws/${cep}/json/`;
 
@@ -45,9 +43,9 @@ function consultarCEP(cep) {
         .catch(error => console.error('Erro ao consultar CEP:', error));
 }
 
-/**
- * Função para cadastrar a necessidade.
- */
+
+ // Função para cadastrar a necessidade.
+ 
 function cadastrarNecessidade() {
     // Validação de formulário 
     const nomeInstituicao = document.getElementById('nomeInstituicao').value;
@@ -59,12 +57,12 @@ function cadastrarNecessidade() {
 
     if (!nomeInstituicao || !tipoAjuda || !titulo || !descricao || !cep || !contato) {
         alert('Por favor, preencha todos os campos obrigatórios (*).');
-        return; // Interrompe a função se a validação falhar
+        return;
     }
 
     // Cria um objeto com os dados da necessidade
     const necessidade = {
-        id: Date.now(), // ID único baseado no tempo atual
+        id: Date.now(),
         nomeInstituicao,
         tipoAjuda,
         titulo,
@@ -94,17 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cardsContainer) {
         carregarNecessidades();
     }
-    // ... (restante do código do DOMContentLoaded)
+
 });
 
-/**
- * Carrega as necessidades do localStorage e as exibe na tela.
- */
+
+ // Carrega as necessidades do localStorage e as exibe na tela.
+ 
 function carregarNecessidades() {
     const necessidades = JSON.parse(localStorage.getItem('necessidades')) || [];
     const cardsContainer = document.getElementById('cards-container');
     
-    cardsContainer.innerHTML = ''; // Limpa a área antes de adicionar os cards
+    cardsContainer.innerHTML = '';
 
     if (necessidades.length === 0) {
         cardsContainer.innerHTML = '<p>Nenhuma necessidade cadastrada no momento.</p>';
@@ -112,7 +110,7 @@ function carregarNecessidades() {
     }
 
     necessidades.forEach(necessidade => {
-        // Apresentar cada necessidade em um "card" ou bloco visualmente distinto 
+        // Apresentar cada necessidade em um card
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
