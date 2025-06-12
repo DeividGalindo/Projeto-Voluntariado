@@ -1,5 +1,5 @@
 html, body {
-    height: 100%; /* Garante que o html e o body ocupem 100% da altura */
+    height: 100%;
 }
 
 * {
@@ -24,7 +24,7 @@ body {
     padding: 0 20px;
 }
 
-/* Cabeçalho, rodapé e navegação para consistência visual  */
+/* Cabeçalho, rodapé e navegação  */
 header {
     background: #333;
     color: #fff;
@@ -141,7 +141,7 @@ main {
     min-width: 200px;
 }
 
-/* Layout Amigável: Apresentar cada necessidade em um "card"  */
+/* Layout de cards"  */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -207,4 +207,106 @@ main {
     .grid-col-6 {
         grid-column: span 1;
     }
+}
+
+/* Estilos da Nova Página Inicial */
+
+/* Seção Hero */
+.hero {
+    background-color: #0779e4;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+.btn.btn-primary {
+    background-color: #fff;
+    color: #0779e4;
+    margin-right: 10px;
+}
+
+/* Seção Como Funciona */
+.how-it-works {
+    text-align: center;
+    padding: 40px 0;
+}
+.how-it-works h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+.steps {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.step {
+    max-width: 300px;
+}
+.step span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.step h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* Seção de Causas */
+.causes-section {
+    padding: 40px 0;
+    background-color: #e9ecef;
+    text-align: center;
+}
+.causes-section h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+.causes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+.cause-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+.cause-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Seção de Depoimento */
+.testimonial {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+.testimonial blockquote {
+    font-size: 1.3em;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+}
+.testimonial cite {
+    font-weight: bold;
+    color: #0779e4;
 }
