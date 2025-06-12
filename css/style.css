@@ -1,4 +1,7 @@
-/* Boas práticas e reset básico */
+html, body {
+    height: 100%; /* Garante que o html e o body ocupem 100% da altura */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +13,8 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -59,6 +64,7 @@ footer {
 
 main {
     padding: 20px 0;
+    flex-grow: 1;
 }
 
 /* Estilos do Formulário */
