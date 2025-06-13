@@ -1,6 +1,3 @@
-html, body {
-    height: 100%;
-}
 
 * {
     margin: 0;
@@ -30,6 +27,7 @@ header {
     color: #fff;
     padding: 1rem 0;
     border-bottom: #0779e4 3px solid;
+    /* overflow: auto; */
 }
 
 header h1 {
